@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>TFT Libreta</title>
+<style>
+:root{--bg:#0e1822;--pn:#16283a;--ln:#27425a;--tx:#ece7d9;--mu:#97a9b8;--ac:#35c2b3;--gd:#e3b84f;--S:#ff6b6b;--A:#f0a23c;--B:#5aa9e6;--C:#8fa1b0;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.4 system-ui,sans-serif;padding:env(safe-area-inset-top,0) 0 64px}
+input,textarea,select{width:100%;font:inherit;color:var(--tx);background:var(--pn);border:1px solid var(--ln);border-radius:10px;padding:8px 10px}
+textarea{min-height:70px}label{display:block;font-size:12px;color:var(--mu);margin:10px 0 3px}
+header,main{max-width:640px;margin:0 auto;padding:6px 10px}
+.card{background:var(--pn);border:1px solid var(--ln);border-radius:12px;padding:9px 10px;margin:6px 0}
+.r{display:flex;gap:8px;align-items:center}.nm{font-weight:700;flex:1}.sub{color:var(--mu);font-size:.85em;margin-top:2px}
+.tier{flex:none;width:30px;height:34px;display:grid;place-items:center;font-weight:800;color:#fff;background:var(--C);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.tier.S{background:var(--S)}.tier.A{background:var(--A)}.tier.B{background:var(--B)}
+.ch{display:inline-block;margin:2px 4px 2px 0;padding:1px 8px;border:1px solid var(--ln);border-radius:6px;font-size:.9em}
+.k-c{color:#c3ccd4}.k-a{color:#f0c14b}.k-r{color:#ffd86b;border-color:#ffd86b}.k-e,.t-P{color:#d68cff}.t-S{color:#c3ccd4}.t-G{color:#f0c14b}
+.ch b{margin-left:6px;cursor:pointer;color:var(--S)}
+.lnk{background:none;border:0;color:var(--ac);font:inherit;padding:4px 8px 4px 0}.lnk.d{color:var(--S)}
+.im{max-width:100%;border-radius:8px;margin:6px 0;display:block}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--pn);border-top:1px solid var(--ln);display:flex;padding:4px 4px calc(4px + env(safe-area-inset-bottom,0))}
+nav button{flex:1;background:none;border:0;color:var(--mu);font:inherit;font-size:13px;padding:9px 2px;border-radius:10px}
+nav button[aria-selected=true]{color:var(--ac);font-weight:700;background:var(--bg)}
+.fab{position:fixed;right:14px;bottom:62px;background:var(--ac);color:#06201d;border:0;border-radius:999px;padding:12px 18px;font:700 15px system-ui}
+.sheet{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9;display:none;align-items:flex-end;justify-content:center}.sheet.on{display:flex}
+.form{background:var(--bg);width:100%;max-width:640px;max-height:94%;overflow:auto;border-radius:16px 16px 0 0;padding:14px}
+.btn{flex:1;padding:11px;border-radius:10px;border:1px solid var(--ln);background:var(--pn);color:var(--tx);font:inherit;font-weight:600}.btn.p{background:var(--ac);color:#06201d;border-color:var(--ac)}
+.cr{border:1px solid var(--ln);border-radius:10px;padding:8px;margin:8px 0}.r2{display:flex;gap:6px;margin:4px 0}.r2 select{width:auto}.r2 button{flex:none}
+h3{margin:12px 0 4px;color:var(--gd);font-size:1em}
+.bb nav button{font-size:.95em}.bb header{padding-bottom:0}
+.bar{position:fixed;left:0;right:0;bottom:46px;display:flex;gap:6px;justify-content:center;padding:4px;font-size:13px}
+.bar button{background:var(--pn);color:var(--tx);border:1px solid var(--ln);border-radius:8px;padding:5px 12px;font:inherit}
+.empty{text-align:center;color:var(--mu);padding:30px}
+button.ch{background:none;color:var(--tx);font:inherit;font-size:.9em;cursor:pointer}
+button.ch.on{background:var(--ac);color:#06201d;border-color:var(--ac)}
+</style></head><body>
+<header id="hd"><input id="q" type="search" placeholder="Buscar"></header>
+<main id="app"></main><div id="dls"></div>
+<button class="fab" id="fab" data-a="nw">+ Añadir</button>
+<nav id="nav"></nav>
+<div class="bar" id="bar"></div>
+<div class="sheet" id="sh"><div class="form" id="fm"></div></div>
+<script src="datos.js"></script>
+<script src="app.js"></script>
+</body></html>
